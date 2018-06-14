@@ -22,7 +22,7 @@ To set the workstation, the tutorial from Rethink Robotics has been consulted (h
    It is recommended to calibrate Baxter's arms for getting more precise results. On the website there are two different calibration routines which are very well described.
     http://sdk.rethinkrobotics.com/wiki/Arm_Calibration
    
-   ## The colour of the objects
+   ## Colour of the objects
 
    The object recognition can only work if the colours of the objects are known. The colours are defined in the baxter_img.cpp file as low and high HSV values. The best way to get the color values from an object which should be detected is to take pictures with the Baxter camera from it on the workspace in different positions and with different illuminations. 
 
