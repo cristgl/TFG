@@ -43,36 +43,15 @@ There are two main classification tasks using a paddle and a wedge as tools, the
 Baxter classifies objects on the top of a table, setting them aside.
 
 The project must be added in the src folder from the workspace and can be launched after it is built from a sourced terminal.
-Open a new terminal:
-    $ source /opt/ros/indigo/setup.bash
-    $ source ros_ws/devel/setup.bash
-    $ cd ros_ws/
-    $ ./baxter.sh
-    $ catkin_make
-    $ roslaunch classif classification.launch
 
 ## Dynamic environment classification using a wedge
 
 For making this classification, the speed of the objects on the conveyor belt has to be calculated. Then, the Baxter robot will predict where the objects are to separate them.
 
 The project must be added in the src folder from the workspace and can be launched after it is built from a sourced terminal.
-Open a new terminal:
-    $ source /opt/ros/indigo/setup.bash
-    $ source ros_ws/devel/setup.bash
-    $ cd ros_ws/
-    $ ./baxter.sh
-    $ catkin_make
-    $ roslaunch dyn_wedge dyn_wedge.launch
-    
+
 ## Dynamic environment classification using a paddle
 
 For making this classification, the speed of the objects on the conveyor belt has to be calculated. Then, the Baxter robot will predict where the objects are to separate them. In this case, the tool used is a paddle, so it will be necessary to predict the position twice, as it can be seen in the video.
 
 The project must be added in the src folder from the workspace and can be launched after it is built from a sourced terminal.
-Open a new terminal:
-    $ source /opt/ros/indigo/setup.bash
-    $ source ros_ws/devel/setup.bash
-    $ cd ros_ws/
-    $ ./baxter.sh
-    $ catkin_make
-    $ roslaunch dyn_classif dyn_classif.launch
