@@ -3,7 +3,7 @@
  
 # Prerequisites
 
-   # Workstation Setup
+   ## Workstation Setup
 
 To set the workstation, the tutorial from Rethink Robotics has been consulted (http://sdk.rethinkrobotics.com/wiki/Workstation_Setup), in this site you can find the installation of Ubuntu, the ROS specific version for that Ubuntu version, the Baxter SDK and the instructions for establishing the first comunication with the robot, which requires an Ethernet connection.
     Example: Network Connection->Add->Ethernet
