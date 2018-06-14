@@ -36,3 +36,43 @@ To set the workstation, the tutorial from Rethink Robotics has been consulted (h
 # Tasks Overview
 
 There are two main classification tasks using a paddle and a wedge as tools, the first one is used in static classification and the other one in dynamic. Both of them are made out of cardboard and it is common that sometimes the objects weight more than the tools, resulting on difficulties at the time of classifying. The clustering algorithm used is K-means with k = 2, it separates the objects by colour and position. This algorithm gives us the centroids of both groups so that we can get the middle point.
+
+
+## Static environment classification
+
+Baxter classifies objects on the top of a table, setting them aside.
+
+The project must be added in the src folder from the workspace and can be launched after it is built from a sourced terminal.
+Open a new terminal:
+    $ source /opt/ros/indigo/setup.bash
+    $ source ros_ws/devel/setup.bash
+    $ cd ros_ws/
+    $ ./baxter.sh
+    $ catkin_make
+    $ roslaunch classif classification.launch
+
+## Dynamic environment classification using a wedge
+
+For making this classification, the speed of the objects on the conveyor belt has to be calculated. Then, the Baxter robot will predict where the objects are to separate them.
+
+The project must be added in the src folder from the workspace and can be launched after it is built from a sourced terminal.
+Open a new terminal:
+    $ source /opt/ros/indigo/setup.bash
+    $ source ros_ws/devel/setup.bash
+    $ cd ros_ws/
+    $ ./baxter.sh
+    $ catkin_make
+    $ roslaunch dyn_wedge dyn_wedge.launch
+    
+## Dynamic environment classification using a paddle
+
+For making this classification, the speed of the objects on the conveyor belt has to be calculated. Then, the Baxter robot will predict where the objects are to separate them. In this case, the tool used is a paddle, so it will be necessary to predict the position twice, as it can be seen in the video.
+
+The project must be added in the src folder from the workspace and can be launched after it is built from a sourced terminal.
+Open a new terminal:
+    $ source /opt/ros/indigo/setup.bash
+    $ source ros_ws/devel/setup.bash
+    $ cd ros_ws/
+    $ ./baxter.sh
+    $ catkin_make
+    $ roslaunch dyn_classif dyn_classif.launch
