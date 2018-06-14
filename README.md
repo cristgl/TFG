@@ -11,18 +11,18 @@ To set the workstation, the tutorial from Rethink Robotics has been consulted (h
     IPv4 Settings: Method: Manual
     Address: 169.254.0.10, Netmask: 255.255.0.0, Gateway: 0.0.0.0
    
-   # MoveIt
+   ## MoveIt
 
    MoveIt! is used for the motion planning, manipulation and collision checking.
     http://sdk.rethinkrobotics.com/wiki/MoveIt_Tutorial
     Moreover the package moveit_python by Michael Ferguson need to be installed.
    
-   # Robot arm calibration
+   ## Robot arm calibration
 
    It is recommended to calibrate Baxter's arms for getting more precise results. On the website there are two different calibration routines which are very well described.
     http://sdk.rethinkrobotics.com/wiki/Arm_Calibration
    
-   # The colour of the objects
+   ## The colour of the objects
 
    The object recognition can only work if the colours of the objects are known. The colours are defined in the baxter_img.cpp file as low and high HSV values. The best way to get the color values from an object which should be detected is to take pictures with the Baxter camera from it on the workspace in different positions and with different illuminations. 
 
