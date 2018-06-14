@@ -15,7 +15,7 @@ To set the workstation, the tutorial from Rethink Robotics has been consulted (h
 
    MoveIt! is used for the motion planning, manipulation and collision checking.
     http://sdk.rethinkrobotics.com/wiki/MoveIt_Tutorial
-    Moreover the package moveit_python by Michael Ferguson need to be installed.
+    Moreover the package moveit_python by Michael Ferguson needs to be installed.
    
    ## Robot arm calibration
 
