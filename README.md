@@ -55,3 +55,16 @@ The project must be added in the src folder from the workspace and can be launch
 For making this classification, the speed of the objects on the conveyor belt has to be calculated. Then, the Baxter robot will predict where the objects are to separate them. In this case, the tool used is a paddle, so it will be necessary to predict the position twice, as it can be seen in the video.
 
 The project must be added in the src folder from the workspace and can be launched after it is built from a sourced terminal.
+
+
+# Packages
+
+* **classif**. It includes the classification in a static environment.
+* **dyn_classif**. Classification in a dynamic environment using a paddle.
+* **dyn_wedge**. Classification in a dynamic environment using a wedge.
+* **pick_and_place**. Adapted pick and place program for executing it in the Baxter robot.
+
+The files included by this packages are:
+* baxter_img.cpp: This C++ program identifies the objects in the image, visualizes them and calculates the middle point between the two groups of objects, sending them to de control file.
+* file.py: It is the control file, it subscribes to the "clasificacion" or "detected_objects" topic and plans the trajectories and execute them to separate or pick the objects.
+* file.launch: This launch file runs all the required nodes to accomplish the task.
