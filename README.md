@@ -65,6 +65,6 @@ The project must be added in the src folder from the workspace and can be launch
 * **pick_and_place**. Adapted pick and place program for executing it in the Baxter robot.
 
 The files included by this packages are:
-* baxter_img.cpp: This C++ program identifies the objects in the image, visualizes them and calculates the middle point between the two groups of objects, sending them to de control file.
+* baxter_img.cpp: This C++ program identifies the objects in the image, visualizes them and calculates the middle point between the two groups of objects, sending them to the control file.
 * file.py: It is the control file, it subscribes to the "clasificacion" or "detected_objects" topic and plans the trajectories and execute them to separate or pick the objects.
 * file.launch: This launch file runs all the required nodes to accomplish the task.
