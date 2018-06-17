@@ -68,3 +68,11 @@ The files included by this packages are:
 * baxter_img.cpp: This C++ program identifies the objects in the image, visualizes them and calculates the middle point between the two groups of objects, sending them to the control file.
 * file.py: It is the control file, it subscribes to the "clasificacion" or "detected_objects" topic and plans the trajectories and execute them to separate or pick the objects.
 * file.launch: This launch file runs all the required nodes to accomplish the task.
+
+This packages must be added in the src folder from the ROS workspace and can be launched after it is built from a sourced terminal.
+$ source /opt/ros/kinetic/setup.bash
+$ source ros_ws/devel/setup.bash
+$ cd ros_ws/
+$ ./baxter.sh
+$ catkin_make
+$ roslaunch package file.launch
