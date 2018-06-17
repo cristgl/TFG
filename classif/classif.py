@@ -15,27 +15,26 @@ from operator import itemgetter
 from std_msgs.msg import String
 
 
-def classify():
+def clasificar():
 
-	adaptative = False
+	adaptative = True
 	pr_b = False
 	precision = 0.7
 
 	# Can free memory?
 	pub = rospy.Publisher("finished", String, queue_size=10)
 
-	# Inicializamos la escena de MoveIt
+	# Initialize MoveIt! scene
 	p = PlanningSceneInterface("base")
-	#group = moveit_commander.MoveGroupCommander("Baxter")
-	#group.set_planner_id("RRTConnectkConfigDefault")
+
 	arms_group = MoveGroupInterface("both_arms", "base")
 	rightarm_group = MoveGroupInterface("right_arm", "base")
 	leftarm_group = MoveGroupInterface("left_arm", "base")
 	 
-	# Creamos la instancia del brazo derecho
+	# Create right arm instance
 	right_arm = baxter_interface.limb.Limb('right')
 	 
-	# Creamos la instancia del gripper derecho
+	# Create right gripper instance
 	right_gripper = baxter_interface.Gripper('right')
 	right_gripper.calibrate()
 	right_gripper.open()
@@ -53,14 +52,14 @@ def classify():
 	j=0
 	k=0
 
-	# Inicializamos lista de objetos
+	# Initialize object list
 	objlist = ['obj01', 'obj02', 'obj03', 'obj04', 'obj05', 'obj06', 'obj07', 'obj08', 'obj09', 'obj10', 'obj11']
 	p.clear()
 	p.attachBox('table', table_size_x, table_size_y, table_size_z, center_x, center_y, center_z, 'base', touch_links=['pedestal'])
 	p.waitForSync()
 	# Move both arms to start state.
 
-	# Posicion inicial de Baxter
+	# Initial pos
 	rpos = PoseStamped()
 	rpos.header.frame_id = "base"
 	rpos.header.stamp = rospy.Time.now()
@@ -83,99 +82,83 @@ def classify():
 	lpos.pose.orientation.z = 0.0
 	lpos.pose.orientation.w = 0.0
 
-	#rpos.pose = rotate_pose_msg_by_euler_angles(rpos.pose, 0.0, 0.0, 0.5)
-	rightarm_group.moveToPose(rpos, "right_gripper", max_velocity_scaling_factor=1, plan_only=False)
-	leftarm_group.moveToPose(lpos, "left_gripper", max_velocity_scaling_factor=1, plan_only=False)
 
-	#time.sleep(1)
-
-	# Medimos el tiempo que invierte en realizar la tarea
-
-	pr = cProfile.Profile()
-	pr.enable()
-	init = time.time()
-
-	locs = PoseArray()
-	locs = rospy.wait_for_message("clasificacion", PoseArray)
-
-	if(len(locs.poses)!=0):
-	   	
-	   	punto_medio = PoseStamped()
-		punto_medio.header.frame_id = "base"
-		punto_medio.header.stamp = rospy.Time.now()
-		punto_medio.pose.position.x = locs.poses[0].position.x
-		punto_medio.pose.position.y = locs.poses[0].position.y
-		punto_medio.pose.position.z = locs.poses[0].position.z
-		punto_medio.pose.orientation.x = locs.poses[0].orientation.x
-		punto_medio.pose.orientation.y = locs.poses[0].orientation.y
-		punto_medio.pose.orientation.z = locs.poses[0].orientation.z
-		punto_medio.pose.orientation.w = locs.poses[0].orientation.w
+	while True:
 		
-		alfa = 0.1
-
-		# Parametro que permita coger mas o menos objetos verdes y otro para robotica adaptativa
-		if (pr_b and not adaptative):
-			if precision >= 1:
-				punto_medio.pose.position.x += 0.01
-		
-			else:
-				punto_medio.pose.position.x -= alfa * (1 - precision)
-
-		elif adaptative:
-
-			print("Si es la primera ejecucion, escribe 1.0")
-			precision_value = input()
-
-			if precision_value != 1.0:
-				punto_medio.pose.position.x += alfa * (1 - precision_value)
-		
-		#print("pm: "+ str(punto_medio.pose.orientation.x))
-
-		orient = (-1) * (1/punto_medio.pose.orientation.x)
-		print(orient)
-		print(punto_medio.pose.orientation.x)
-		print("**************************************************************************")
-
-		#if orient > 45:
-		#	orient = -1*(orient % 45)
-
-		punto_medio.pose = rotate_pose_msg_by_euler_angles(punto_medio.pose, 0.0, 0.0, orient)#1.57)
-		rightarm_group.moveToPose(punto_medio, "right_gripper", max_velocity_scaling_factor=1, plan_only=False)
-
-		orient = 1.57 - orient 
-		punto_medio.pose = rotate_pose_msg_by_euler_angles(punto_medio.pose, 0.0, 0.0, orient)
-		rightarm_group.moveToPose(punto_medio, "right_gripper", max_velocity_scaling_factor=1, plan_only=False)
-
-		punto_medio.pose.position.x += 0.15
-		rightarm_group.moveToPose(punto_medio, "right_gripper", max_velocity_scaling_factor=1, plan_only=False)
-		time.sleep(1)
-		punto_medio.pose.position.x -= 0.3
-		rightarm_group.moveToPose(punto_medio, "right_gripper", max_velocity_scaling_factor=1, plan_only=False)
-		time.sleep(1)
-
+		# Move to initial position
 		rightarm_group.moveToPose(rpos, "right_gripper", max_velocity_scaling_factor=1, plan_only=False)
+		leftarm_group.moveToPose(lpos, "left_gripper", max_velocity_scaling_factor=1, plan_only=False)
 
-		fin = time.time()
-		mytime = fin - init
-		pr.disable()
-		sortby = 'cumulative'
-		print("Deshabilitando profiler")
-		ps=pstats.Stats(pr).sort_stats(sortby).print_stats(0.0)
-		
-		freemem = "free"
-		pub.publish(freemem)
+		# Get the middle point
+		locs = PoseArray()
+		locs = rospy.wait_for_message("clasificacion", PoseArray)
 
-		with open('/home/buxter/ros_ws/src/classif/results-big.txt', 'a') as file:
-			file.write(str(mytime))
-			file.write("\n")
-		file.close()
+		if(len(locs.poses)!=0):
+		   	
+		   	punto_medio = PoseStamped()
+			punto_medio.header.frame_id = "base"
+			punto_medio.header.stamp = rospy.Time.now()
+			punto_medio.pose.position.x = locs.poses[0].position.x
+			punto_medio.pose.position.y = locs.poses[0].position.y
+			punto_medio.pose.position.z = locs.poses[0].position.z
+			punto_medio.pose.orientation.x = locs.poses[0].orientation.x
+			punto_medio.pose.orientation.y = locs.poses[0].orientation.y
+			punto_medio.pose.orientation.z = locs.poses[0].orientation.z
+			punto_medio.pose.orientation.w = locs.poses[0].orientation.w
+			
+			alfa = 0.1
 
-	else:
-		sys.exit("No se encuentran los puntos")
+			# Two parameters: 
+			# When pr_b == 1, the program will try to adapt the trajectory for getting the precision established in the parameter of the same name
+			# When adaptative == 1, the program will try to get the best precision based on the precision of the last execution.
+
+			if (pr_b and not adaptative):
+				if precision >= 1:
+					punto_medio.pose.position.x += 0.01
+			
+				else:
+					punto_medio.pose.position.x -= alfa * (1 - precision)
+
+			else:
+
+				print("If it is the first time executing, write -1")
+				precision_value = input()
+
+				if precision_value != -1.0:
+					punto_medio.pose.position.x += alfa * (1 - precision_value)
+				elif precision_value == 1.0:
+					adaptative = False
+			
+			# Get the normal orientation for separating the objects
+			orient = (-1) * (1/punto_medio.pose.orientation.x)
+
+			punto_medio.pose = rotate_pose_msg_by_euler_angles(punto_medio.pose, 0.0, 0.0, orient)
+			rightarm_group.moveToPose(punto_medio, "right_gripper", max_velocity_scaling_factor=1, plan_only=False)
+
+			orient = 1.57 - orient 
+			punto_medio.pose = rotate_pose_msg_by_euler_angles(punto_medio.pose, 0.0, 0.0, orient)
+			rightarm_group.moveToPose(punto_medio, "right_gripper", max_velocity_scaling_factor=1, plan_only=False)
+
+			punto_medio.pose.position.x += 0.15
+			rightarm_group.moveToPose(punto_medio, "right_gripper", max_velocity_scaling_factor=1, plan_only=False)
+			time.sleep(1)
+			punto_medio.pose.position.x -= 0.3
+			rightarm_group.moveToPose(punto_medio, "right_gripper", max_velocity_scaling_factor=1, plan_only=False)
+			time.sleep(1)
+
+			rightarm_group.moveToPose(rpos, "right_gripper", max_velocity_scaling_factor=1, plan_only=False)
+
+			# Free the memory when finished
+			freemem = "free"
+			if not adaptative:
+				pub.publish(freemem)
+
+		else:
+			sys.exit("Cannot identify any object")
 
 if __name__=='__main__':
 	try:
 		rospy.init_node('clsf', anonymous=True)
-		classify()
+		clasificar()
 	except rospy.ROSInterruptException:
 		pass

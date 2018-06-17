@@ -1,6 +1,3 @@
-// Copyright (C) 2017 Maik Heufekes, 05/07/2017.
-// License, GNU LGPL, free software, without any warranty.
-
 #include "ros/ros.h"
 #include "sensor_msgs/Image.h"
 #include <sstream>
@@ -112,7 +109,7 @@ void ProcessAndPublish(geometry_msgs::PoseArray points){
 
 	float m1, n1, x, y, norm_x, norm_y, norm_z;
 	int points_size, k=2;
-	cv::Mat centros(0, 0, CV_8U); // Matriz con points_size filas y 3 columnas
+	cv::Mat centros(0, 0, CV_8U);
 	pos *pos_a_devolver = (pos *)malloc(sizeof(pos) * 2);
 	cv::Mat bestLabels, centers, img2show;
 	geometry_msgs::PoseArray publicados;
@@ -122,34 +119,25 @@ void ProcessAndPublish(geometry_msgs::PoseArray points){
 
 	// Normalize data
 	for (int i=0; i < points_size; i++){
-		//cout << "x: " << points.poses[i].position.x << " y: " << points.poses[i].position.y << " z: " << points.poses[i].position.z << endl;
-		//cout << endl;
 		norm_x = (float) (points.poses[i].position.x - (-255))/(255.0 - (-255.0));
-		//cout << norm_x << endl;
 		centros.push_back(norm_x);
 
 		norm_y = (float) (points.poses[i].position.y - (-255))/(255.0 - (-255.0));
-		//cout << norm_y << endl;
 		centros.push_back(norm_y);
 
 		norm_z = (float) (points.poses[i].position.z - 1.0)/(255.0 - 1.0);
-		//cout << norm_z << endl;
 		centros.push_back(norm_z);
 	}
-
-	//ROS_INFO("Number of channels: %d", centros.channels());
 
 	centros.convertTo(centros, CV_32F);
 	centros = centros.reshape(0,points_size);
 
 	if(!centros.empty()){
-		// Get the 2 clusters
+
 		cv::kmeans(centros, k, bestLabels, cv::TermCriteria(TermCriteria::EPS+TermCriteria::COUNT, 10, 1.0), 10, cv::KMEANS_RANDOM_CENTERS, centers);
 		bestLabels = bestLabels.reshape(0, centros.rows);
 		cv::convertScaleAbs(bestLabels, img2show, int(255/k));
-		//cout << "centroides " << centers << endl;
-		//cout << "centros " << centros << endl;
-
+		
 		// Denormalize data
 		punto_A.position.x = (centers.at<float>(0,0) * (255 - (-255))) + (-255);
 		punto_A.position.y = (centers.at<float>(0,1) * (255 - (-255))) + (-255);
@@ -158,9 +146,7 @@ void ProcessAndPublish(geometry_msgs::PoseArray points){
 		punto_A.orientation.y = 0;
 		punto_A.orientation.z = 0;
 		punto_A.orientation.w = 0;
-		//cout << "pA: " << punto_A;
-		//rightarm_group.moveToPose(punto_A, "right_gripper", max_velocity_scaling_factor=1, plan_only=False)
-
+		
 		punto_B.position.x = (centers.at<float>(1,0) * (255 - (-255))) + (-255);
 		punto_B.position.y = (centers.at<float>(1,1) * (255 - (-255))) + (-255);
 		punto_B.position.z = -0.09;
@@ -168,16 +154,15 @@ void ProcessAndPublish(geometry_msgs::PoseArray points){
 		punto_B.orientation.y = 0;
 		punto_B.orientation.z = 0;
 		punto_B.orientation.w = 0;
-		//cout << "pB: " << punto_B;
 
-		// Calculamos la recta y = mx + n
-		// Pendiente de la recta m = (y2 - y1)/(x2 - x1)
+		// Calculate y = mx + n
+		// m = (y2 - y1)/(x2 - x1)
 		m1 = (punto_B.position.y - punto_A.position.y) / (punto_B.position.x - punto_A.position.x);
-		//cout << "m1 es: " << m1 << endl;
-		// Ordenada de la recta n = y - mx
+		
+		// n = y - mx
 		n1 = punto_A.position.y - m1 * punto_A.position.x;
 
-		// Hallamos el punto medio entre A y B: (xA+xB/2, yA+yB/2)
+		// Get the middle point between A and B: (xA+xB/2, yA+yB/2)
 		punto_medio.position.x = (punto_A.position.x + punto_B.position.x)/2;
 		punto_medio.position.y = (punto_A.position.y + punto_B.position.y)/2;
 		punto_medio.position.z = -0.09;
@@ -186,37 +171,28 @@ void ProcessAndPublish(geometry_msgs::PoseArray points){
 		punto_medio.orientation.z = 0;
 		punto_medio.orientation.w = 0;
 
-		//cout << "punto A: " << punto_A << endl;
-		//cout << "punto B: " << punto_B << endl;
-		//cout << "punto medio: " << punto_medio << endl;
-
 		pos_a_devolver->x = punto_medio.position.x;
 		pos_a_devolver->y = punto_medio.position.y;
 		pos_a_devolver->angle = punto_medio.position.z;
 		pos_a_devolver->size = punto_medio.orientation.x;
-		//cout << "ANTES: relpos[0].x " << pos_a_devolver->x << " relpos[0].y " << pos_a_devolver->y << endl;
-
+		
 		Get3DPos(pos_a_devolver, good_pos);
-
-		//cout << "DPUES: relpos[0].x " << good_pos2->x/ 1000+0.07+0.57 << " relpos[0].y " << good_pos2->y/ 1000-0.032 << endl;
 
 		a_devolver.position.x = good_pos->x / 1000+0.07+0.57;
 		a_devolver.position.y = good_pos->y / 1000-0.032;
 		a_devolver.position.z = -0.09;
-		a_devolver.orientation.x = m1;//*3.1415/180; 
+		a_devolver.orientation.x = m1; 
 		a_devolver.orientation.y = 0;
 		a_devolver.orientation.z = 0;
 		a_devolver.orientation.w = 0;
 
 		publicados.poses.push_back(a_devolver);
-
 		clasificacion.publish(publicados);
 
 	}else
 		int n = 0;
-    	//ROS_INFO("No se reconoce ningún objeto");
 
-	if(finished){
+    if(finished){
     	free(pos_a_devolver);
     	free(good_pos);
     	free(pos_head);
@@ -310,7 +286,7 @@ void ImageCallBack(const sensor_msgs::Image &msg)
 		// Publish the obj pos and orientation and size.
 		points.poses.push_back(pose);
 	}
-
+	
 	ProcessAndPublish(points);
 
 }
@@ -441,7 +417,6 @@ void GetPosition(IplImage *src, uchar* COLOR, uchar* COLOR_, int num)
 }
 
 void FilterImage(IplImage *src, IplImage *dis, int tope_y){
-	
 	IplImage *temp_ = cvCreateImage(cvGetSize(src), IPL_DEPTH_8U, 3);
 	cvCvtColor(src, temp_, CV_BGR2HSV);
 

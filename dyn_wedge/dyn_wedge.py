@@ -19,18 +19,16 @@ def dyn_wedge():
 
 	pub = rospy.Publisher("finished", String, queue_size=10)
 
-	# Inicializamos la escena de MoveIt
+	# Initialize MoveIt scene
 	p = PlanningSceneInterface("base")
-	#group = moveit_commander.MoveGroupCommander("Baxter")
-	#group.set_planner_id("RRTConnectkConfigDefault")
 	arms_group = MoveGroupInterface("both_arms", "base")
 	rightarm_group = MoveGroupInterface("right_arm", "base")
 	leftarm_group = MoveGroupInterface("left_arm", "base")
 	
-	# Creamos la instancia del brazo derecho
+	# Create right arm instance
 	right_arm = baxter_interface.limb.Limb('right')
 	
-	# Creamos la instancia del gripper derecho
+	# Create right gripper instance
 	right_gripper = baxter_interface.Gripper('right')
 	right_gripper.calibrate()
 	right_gripper.open()
@@ -48,14 +46,14 @@ def dyn_wedge():
 	j=0
 	k=0
 
-	# Inicializamos lista de objetos
+	# Initialize object list
 	objlist = ['obj01', 'obj02', 'obj03', 'obj04', 'obj05', 'obj06', 'obj07', 'obj08', 'obj09', 'obj10', 'obj11']
 	p.clear()
 	p.attachBox('table', table_size_x, table_size_y, table_size_z, center_x, center_y, center_z, 'base', touch_links=['pedestal'])
 	p.waitForSync()
 	# Move both arms to start state.
 
-	# Posicion inicial de Baxter
+	# Initial pose
 	rpos = PoseStamped()
 	rpos.header.frame_id = "base"
 	rpos.header.stamp = rospy.Time.now()
@@ -78,15 +76,10 @@ def dyn_wedge():
 	lpos.pose.orientation.z = 0.0
 	lpos.pose.orientation.w = 0.0
 
-	#rpos.pose = rotate_pose_msg_by_euler_angles(rpos.pose, 0.0, 0.0, 0.5)
 	rightarm_group.moveToPose(rpos, "right_gripper", max_velocity_scaling_factor=1, plan_only=False)
 	leftarm_group.moveToPose(lpos, "left_gripper", max_velocity_scaling_factor=1, plan_only=False)
 
-	#time.sleep(1)
-	# Medimos el tiempo que invierte en realizar la tarea
-	pr = cProfile.Profile()
-	pr.enable()
-	inicio = time.time()
+	# Get the middle point between the two centroids
 	locs = rospy.wait_for_message("clasificacion", PoseArray)
 
 	if(len(locs.poses)!=0):
@@ -96,17 +89,16 @@ def dyn_wedge():
 		punto_medio1.header.stamp = rospy.Time.now()
 		punto_medio1.pose.position.x = locs.poses[0].position.x
 		punto_medio1.pose.position.y = locs.poses[0].position.y
-		punto_medio1.pose.position.z = -0.08#locs.poses[1].position.z
+		punto_medio1.pose.position.z = -0.08
 		punto_medio1.pose.orientation.x = locs.poses[0].orientation.x
 		punto_medio1.pose.orientation.y = locs.poses[0].orientation.y
 		punto_medio1.pose.orientation.z = locs.poses[0].orientation.z
 		punto_medio1.pose.orientation.w = locs.poses[0].orientation.w
-		#print("pB1: ", punto_medio1)
 
 	else:
 		sys.exit("No se encuentran los puntos")
 
-	# Obtenemos por segunda vez la posicion del punto medio tras un tiempo
+	# Get the middle point again after a few seconds
 	tiempo = 3
 	time.sleep(tiempo)
 	locs = rospy.wait_for_message("clasificacion", PoseArray)
@@ -123,21 +115,14 @@ def dyn_wedge():
 		punto_medio2.pose.orientation.y = locs.poses[0].orientation.y
 		punto_medio2.pose.orientation.z = locs.poses[0].orientation.z
 		punto_medio2.pose.orientation.w = locs.poses[0].orientation.w
-		#print("pB2: ", punto_medio2)
 
 	else:
 		sys.exit("No se encuentran los puntos")
 
-	# Calculamos la velocidad
-	
-	#print("P2 ",punto_medio2.pose.position.y)
-	#print("P1 ", punto_medio1.pose.position.y)
-	pr = cProfile.Profile()
-	pr.enable()
+	# Calculate speed of objects
 	vel = (punto_medio2.pose.position.y - punto_medio1.pose.position.y) / tiempo
 
-	# Una vez tenemos la velocidad, vamos a calcular en que punto y con que orientacion hay que poner la cunia
-
+	# Predict position within a certain time
 	nuevo_tiempo = 2.1
 	posicion = nuevo_tiempo * vel * 2
 
@@ -148,20 +133,12 @@ def dyn_wedge():
 
 	orientacion = (-1) * 1/punto_medio2.pose.orientation.x
 
-	print("a: ", orientacion)
-
 	new_or = 0.26
 
 	if orientacion > 0:
 		new_or = -0.26
 
-	# Check for rotating one side or the other
-	#if orientacion > 45:
-	#	orientacion = -1*(orientacion % 45)
-
-	print("o: ", orientacion)
-	print("sadddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd ")
-	#print("newy: ", nueva_y)
+	# If there is time enough to sweep the objects
 	if vel > -0.08:
 		start = time.time()
 		punto_medio2.pose.position.y = nueva_y - nueva_y/2
@@ -178,36 +155,22 @@ def dyn_wedge():
 		punto_medio2.pose.position.y = nueva_y
 
 	print(punto_medio2.pose.position.y)
-	
+
 	punto_medio2.pose.position.x = punto_medio1.pose.position.x
 	punto_medio2.pose.position.y += 0.05 
 	punto_medio2.pose = rotate_pose_msg_by_euler_angles(punto_medio2.pose, 0.0, 0.0, orientacion)
 	rightarm_group.moveToPose(punto_medio2, "right_gripper", max_velocity_scaling_factor=1, plan_only=False)
-	#print("PMY", punto_medio2.pose.position.y)
-	#punto_medio2.pose = rotate_pose_msg_by_euler_angles(punto_medio2.pose, 0.0, 0.0, -0.26)
 	obj = punto_medio2.pose.position.y + 0.16
 	neg = 1
 
 	while punto_medio2.pose.position.y < obj:
 		punto_medio2.pose.position.y += 0.03
-		# Shake 
+		# Shake arm
 		punto_medio2.pose.position.x += neg * 0.09
 		rightarm_group.moveToPose(punto_medio2, "right_gripper", max_velocity_scaling_factor=1, plan_only=False)
 		neg = (-1)*neg
 
-	fin = time.time()
-	pr.disable()
-	sortby = 'cumulative'
-	print("velocidad: ", vel)
-	ps=pstats.Stats(pr).sort_stats(sortby).print_stats(0.0)
-	mytime = fin - inicio
-
-	with open('/home/buxter/ros_ws/src/dyn_wedge/resultsbig.txt', 'a') as file:
-		file.write(str(vel) + " " + str(mytime))
-		file.write("\n")
-	file.close()
-
-	time.sleep(5)
+	time.sleep(2)
 
 	rightarm_group.moveToPose(rpos, "right_gripper", max_velocity_scaling_factor=1, plan_only=False)
 

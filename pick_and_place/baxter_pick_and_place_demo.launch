@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<launch>
+    
+    <node pkg="baxter_tools" type="camera_control.py" name="open_right_camera" output="screen"  args="-o right_hand_camera -r 1280x800" />
+
+    <node pkg="pick_and_place" type="baxter_imagen" name="img" output="screen" />
+
+    <node pkg="pick_and_place" type="pick_and_place_demo.py" name="prueba" output="screen" />
+    <!-- <node pkg="pick_and_place" type="pick_and_place_demo.py" name="pick_and_place_demo" output="screen" /> -->
+
+</launch>
