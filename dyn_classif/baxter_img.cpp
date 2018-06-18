@@ -1,3 +1,6 @@
+// Copyright (C) 2017 Maik Heufekes, 05/07/2017.
+// License, GNU LGPL, free software, without any warranty.
+
 #include "ros/ros.h"
 #include "sensor_msgs/Image.h"
 #include <sstream>
