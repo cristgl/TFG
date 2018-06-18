@@ -1,0 +1,159 @@
+\begin{thebibliography}{10}
+
+\bibitem{robgraph}
+Statista,
+  ``\url{https://www.statista.com/statistics/760207/worldwide-industrial-robotics-market-revenue/},''
+  Consultado en junio de 2018.
+
+\bibitem{robmark}
+ResearchAndMarkets,
+  ``\url{https://globenewswire.com/news-release/2018/05/01/1493768/0/en/Industrial-Robotics-Market-Global-Forecast-to-2025.html},''
+  Consultado en junio de 2018.
+
+\bibitem{lasota2014toward}
+P.~A. Lasota, G.~F. Rossano, and J.~A. Shah, ``Toward safe close-proximity
+  human-robot interaction with standard industrial robots,'' in {\em Automation
+  Science and Engineering (CASE), 2014 IEEE International Conference on},
+  pp.~339--344, IEEE, 2014.
+
+\bibitem{ju2014kinematics}
+Z.~Ju, C.~Yang, and H.~Ma, ``Kinematics modeling and experimental verification
+  of baxter robot,'' in {\em Control Conference (CCC), 2014 33rd Chinese},
+  pp.~8518--8523, IEEE, 2014.
+
+\bibitem{maik}
+M.~Heufekes, ``\url{https://github.com/cvr-lab/baxter_pick_and_place},''
+  Consultado en mayo de 2018.
+
+\bibitem{Robotic}
+A.~Currie,
+  ``\url{https://web.archive.org/web/20060718024255/http://www.faculty.ucr.edu/~currie/roboadam.htm},''
+  Consultado en Mayo de 2018.
+
+\bibitem{rodneybrooks}
+MIT, ``\url{https://people.csail.mit.edu/brooks/},'' Consultado en junio de
+  2018.
+
+\bibitem{tadele2014safety}
+T.~S. Tadele, T.~de~Vries, and S.~Stramigioli, ``The safety of domestic
+  robotics: A survey of various safety-related publications,'' {\em IEEE
+  robotics \& automation magazine}, vol.~21, no.~3, pp.~134--142, 2014.
+
+\bibitem{brown1994human}
+I.~Brown, ``Human factors: the journal of the human factors and ergonomics
+  society,'' {\em Driver Fatigue}, vol.~36, pp.~298--314, 1994.
+
+\bibitem{reardon2015towards}
+C.~Reardon, H.~Tan, B.~Kannan, and L.~DeRose, ``Towards safe robot-human
+  collaboration systems using human pose detection,'' in {\em Technologies for
+  Practical Robot Applications (TePRA), 2015 IEEE International Conference on},
+  pp.~1--6, IEEE, 2015.
+
+\bibitem{robots}
+RobotWorx,
+  ``\url{https://www.robots.com/faq/how-much-do-industrial-robots-cost},''
+  Consultado en Mayo de 2018.
+
+\bibitem{ROS}
+``\url{http://wiki.ros.org/ROS/Introduction},'' Consultado en Mayo de 2018.
+
+\bibitem{ROS2}
+``\url{http://www.ros.org/about-ros/},'' Consultado en Mayo de 2018.
+
+\bibitem{Baxter}
+R.~Robotics, ``\url{https://www.rethinkrobotics.com/baxter/},'' Consultado en
+  Mayo de 2018.
+
+\bibitem{Baxter2}
+R.~Robotics, ``\url{http://sdk.rethinkrobotics.com/wiki/Robot},'' Consultado en
+  Mayo de 2018.
+
+\bibitem{Baxter3}
+R.~Robotics, ``\url{http://sdk.rethinkrobotics.com/wiki/Camera_Control_Tool},''
+  Consultado en Mayo de 2018.
+
+\bibitem{Baxter4}
+R.~Robotics, ``\url{http://sdk.rethinkrobotics.com/wiki/Arms},'' Consultado en
+  Mayo de 2018.
+
+\bibitem{AN}
+C.~U.~P. Steven M.~Lavalle, ``\url{http://planning.cs.uiuc.edu/node102.html},''
+  Consultado en Mayo de 2018.
+
+\bibitem{moveit}
+``\url{https://moveit.ros.org/},'' Consultado en Mayo de 2018.
+
+\bibitem{moveitfaq}
+``\url{http://moveit.ros.org/documentation/faqs/},'' Consultado en Mayo de
+  2018.
+
+\bibitem{rviz}
+``\url{http://wiki.ros.org/rviz},'' Consultado en Mayo de 2018.
+
+\bibitem{models2}
+R.~Wiki, ``\url{http://wiki.ros.org/urdf},'' Consultado en Mayo de 2018.
+
+\bibitem{models}
+R.~Robotics, ``\url{http://sdk.rethinkrobotics.com/wiki/URDF},'' Consultado en
+  Mayo de 2018.
+
+\bibitem{models3}
+J.~Lentin, ``Mastering ros for robotics programming,'' Consultado en mayo de
+  2018.
+
+\bibitem{boehm1988spiral}
+B.~W. Boehm, ``A spiral model of software development and enhancement,'' {\em
+  Computer}, vol.~21, no.~5, pp.~61--72, 1988.
+
+\bibitem{cu}
+M.~Vega, ``\url{https://lsi.ugr.es/~mvega/docis/casos%20de%20uso.pdf},''
+  Consultado en mayo de 2018.
+
+\bibitem{thpy}
+S.~Khanduja,
+  ``\url{https://github.com/saurabheights/IPExperimentTools/blob/master/AnalyzeHSV/hsvThresholder.py},''
+  Consultado en mayo de 2018.
+
+\bibitem{smooth}
+O.~Doc,
+  ``\url{https://docs.opencv.org/2.4/modules/imgproc/doc/filtering.html},''
+  Consultado en mayo de 2018.
+
+\bibitem{erode}
+O.~Doc,
+  ``\url{https://docs.opencv.org/2.4/doc/tutorials/imgproc/erosion_dilatation/erosion_dilatation.html},''
+  Consultado en mayo de 2018.
+
+\bibitem{gazebo}
+Gazebo, ``\url{http://gazebosim.org/tutorials?cat=guided_b&tut=guided_b1},''
+  Consultado en mayo de 2018.
+
+\bibitem{powers2011evaluation}
+D.~M. Powers, ``Evaluation: from precision, recall and f-measure to roc,
+  informedness, markedness and correlation,'' 2011.
+
+\bibitem{pr}
+L.~Thatcher, ``How can precision-recall curves help evaluate your model?,''
+  2018.
+
+\bibitem{scikit-learn}
+F.~Pedregosa, G.~Varoquaux, A.~Gramfort, V.~Michel, B.~Thirion, O.~Grisel,
+  M.~Blondel, P.~Prettenhofer, R.~Weiss, V.~Dubourg, J.~Vanderplas, A.~Passos,
+  D.~Cournapeau, M.~Brucher, M.~Perrot, and E.~Duchesnay, ``Scikit-learn:
+  Machine learning in {P}ython,'' {\em Journal of Machine Learning Research},
+  vol.~12, pp.~2825--2830, 2011.
+
+\bibitem{crgh}
+C.~M.~G. López, ``\url{https://github.com/cristgl/TFG},'' Junio de 2018.
+
+\bibitem{cvrlab}
+C.~Lab,
+  ``\url{http://www.ugr.es/~cvrlab/projects/baxter_conveyor/baxter.html},''
+  Junio de 2018.
+
+\bibitem{hartigan1979algorithm}
+J.~A. Hartigan and M.~A. Wong, ``Algorithm as 136: A k-means clustering
+  algorithm,'' {\em Journal of the Royal Statistical Society. Series C (Applied
+  Statistics)}, vol.~28, no.~1, pp.~100--108, 1979.
+
+\end{thebibliography}

@@ -1,0 +1,145 @@
+\chapter*{}
+%\thispagestyle{empty}
+%\cleardoublepage
+
+%\thispagestyle{empty}
+
+%\input{portada/portada_2}
+
+
+
+\cleardoublepage
+\thispagestyle{empty}
+
+\begin{center}
+{\large\bfseries Implementación de tareas de manipulación precisa con brazos robóticos}\\
+\end{center}
+\begin{center}
+Cristina María Garrido López\\
+\end{center}
+
+%\vspace{0.7cm}
+\noindent{\textbf{Palabras clave}: robótica, clasificación, clustering, k-medias, planificación de trayectorias, filtrado por color.}\\
+
+\vspace{0.7cm}
+\noindent{\textbf{Resumen}}\\
+
+\noindent Este proyecto final de grado presenta el desarrollo de tareas de manipulación de objetos y evaluación de prestaciones, así como análisis de eficiencia de cada algoritmo programado. Se utiliza el robot Baxter de Rethink Robotics y el sistema operativo de robots (ROS). \\
+
+\noindent Se fija como objetivo principal la automatización de tareas de clasificación de objetos en distintos entornos utilizando uno de los brazos robóticos de Baxter para realizar los procesos de visión y control. Posteriormente, se realizarán comparaciones con distinto tamaño y número de objetos en los diferentes entornos.\\
+
+\noindent Se explicarán las funcionalidades del framework ROS, MoveIt! y los componentes hardware de Baxter, así como los métodos utilizados de visión por computador. \\
+
+\noindent Puesto que es difícil encontrar código abierto en robótica, los algoritmos desarrollados en este proyecto serán liberados de forma que puedan ser utilizados por otros investigadores, esperando que así sea más útil para la comunidad.\\
+%\noindent El contenido de este proyecto se encuentra disponible en
+\cleardoublepage
+
+
+\thispagestyle{empty}
+
+
+\begin{center}
+{\large\bfseries Precise handling tasks implementation with robotic arms}\\
+\end{center}
+\begin{center}
+Cristina María Garrido López\\
+\end{center}
+
+%\vspace{0.7cm}
+\noindent{\textbf{Keywords}: Robotics, classification, clustering, k-means, trajectory planning, colour filter.}\\
+
+\vspace{0.7cm}
+\noindent{\textbf{Abstract}}\\
+
+\noindent This Bachelor thesis presents the development of various manipulation tasks and performance evaluation, where the Baxter Robot from Rethink Robotics and the Robot Operating System (ROS) are used. \\
+
+\noindent The main objective is to automate object classification tasks in different environments, using one of Baxter's two robotic arms to carry out computer vision tasks and operational level control. Later, tests will be made with different size and number of objets in the different environments. \\
+
+\noindent ROS functionalities, MoveIt! and Baxter's hardware components will be explained, as well as the computer vision methods. \\
+
+\noindent Since it is difficult to find open source in the field of robotics, the developed algorithms in this thesis will be released so that they can be used by other researchers, hoping it is useful for the comunity. \\
+
+\chapter*{}
+\newpage
+\thispagestyle{empty}
+
+\noindent\rule[-1ex]{\textwidth}{2pt}\\[4.5ex]
+
+Yo, \textbf{Cristina María Garrido López}, alumna de la titulación Ingeniería en Informática de la \textbf{Escuela Técnica Superior
+de Ingenierías Informática y de Telecomunicación de la Universidad de Granada}, con DNI *, autorizo la
+ubicación de la siguiente copia de mi Trabajo Fin de Grado en la biblioteca del centro para que pueda ser
+consultada por las personas que lo deseen.
+
+\vspace{6cm}
+
+\noindent Fdo: Cristina María Garrido López
+
+\vspace{2cm}
+
+\begin{flushright}
+Granada a 17 de Junio de 2018.
+\end{flushright}
+
+\newpage
+\chapter*{}
+\thispagestyle{empty}
+
+\noindent\rule[-1ex]{\textwidth}{2pt}\\[4.5ex]
+
+D. \textbf{Eduardo Ros Vidal}, Profesor del Área de Arquitectura y Tecnología de Computadores del Departamento de Arquitectura y Tecnología de Computadores de la Universidad de Granada.
+
+\vspace{0.5cm}
+
+D. \textbf{Francisco Barranco Expósito}, Profesor del Área de Arquitectura y Tecnología de Computadores del Departamento de Arquitectura y Tecnología de Computadores de la Universidad de Granada.
+
+
+\vspace{0.5cm}
+
+\textbf{Informan:}
+
+\vspace{0.5cm}
+
+Que el presente trabajo, titulado \textit{\textbf{Implementación de tareas de manipulación precisa con brazos robóticos}},
+ha sido realizado bajo su supervisión por \textbf{Cristina María Garrido López}, y autorizamos la defensa de dicho trabajo ante el tribunal
+que corresponda.
+
+\vspace{0.5cm}
+
+Y para que conste, expiden y firman el presente informe en Granada a 18 de Junio de 2018.
+
+\vspace{1cm}
+
+\textbf{Los directores:}
+
+\vspace{5cm}
+
+\noindent \textbf{Eduardo Ros Vidal \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Francisco Barranco Expósito}
+
+\newpage
+\section*{Agradecimientos}
+\thispagestyle{empty}
+
+       \vspace{1cm}
+
+
+\noindent Sobre todo, me gustaría agradecer todo el apoyo, tiempo invertido y consejo proporcionado por los tutores de este proyecto, Eduardo Ros y Francisco Barranco, que nunca han faltado cuando he necesitado su ayuda. Por supuesto, agradezco además el hecho de permitirme trabajar en el laboratorio del CITIC y aportarme los materiales necesarios para realizar mi proyecto. \\
+
+\noindent También me gustaría expresar mi gratitud hacia mis amigos de la facultad, a mi familia y a mis amigas por todo el apoyo durante el curso.\\
+
+
+\newpage
+\section*{Declaración de autoría y originalidad del TFG}
+
+\vspace{1cm}
+
+\noindent Yo, Cristina María Garrido López, con DNI *, declaro que el presente documento ha sido realizado por mí y se basa en mi propio trabajo, a menos que se indique lo contrario. No se ha utilizado el trabajo de ninguna otra persona sin el debido reconocimiento. Todas las referencias han sido citadas y todas las fuentes de información y conjuntos de datos han sido específicamente reconocidos. \\
+
+\vspace{6cm}
+
+\noindent Fdo: Cristina María Garrido López
+
+\vspace{2cm}
+
+\begin{flushright}
+	Granada a 17 de Junio de 2018.
+\end{flushright}

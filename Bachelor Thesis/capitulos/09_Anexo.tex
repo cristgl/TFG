@@ -1,0 +1,21 @@
+
+\section{Anexo. Algoritmos de clustering}
+\label{clustering}
+
+\noindent En este anexo, se explicarán los algoritmos de clustering y, en concreto el algoritmo K-means \cite{hartigan1979algorithm}, que es el algoritmo utilizado en este proyecto. \\
+
+\noindent El clustering es un método de aprendizaje no supervisado. La función de los algoritmos de clustering consiste en agrupar en conjuntos de datos una información. Dado un conjunto de datos, se utiliza un algoritmo de clustering para clasificar cada uno de los puntos en un grupo específico. Cada grupo contiene un grupo de objetos con características similares entre ellos. \\
+
+\noindent Para este proyecto, se utiliza el algoritmo de clustering K-means.
+
+\subsection{Algoritmo K-means}
+\noindent El algoritmo K-means (K-Medias en español) consiste en un tipo de aprendizaje no supervisado, es decir, se ajusta a las observaciones sin conocer los datos. Este algoritmo se encarga de encontrar K clústers en los datos proporcionados, siendo K una entrada. 
+
+\subsubsection{Cómo funciona}
+\noindent Este algoritmo toma dos entradas, K (el número de clústers deseados) y un conjunto de datos. Para empezar, sitúa K centroides en posiciones aleatorias, y, para cada punto de la entrada encuentra el centroide más cercano y lo asigna al clúster perteneciente a ese centroide. Una vez están todos los puntos identificados y clasificados, para cada clúster se calcula un nuevo centroide que consistirá en la media de todos los puntos asignados a él, calculará de nuevo qué puntos pertenecen a esos clústers y parará cuando se mantengan los puntos incluidos en estos.
+
+\subsubsection{Por qué elegir K-means}
+\noindent Este algoritmo es de orden O(n). Es bastante rápido, ya que lo único que hace es calcular las distancias entre los puntos y clústers. \\
+\noindent Una desventaja aparece a la hora de elegir el parámetro K, pues no siempre es trivial. Además, este algoritmo posiciona inicialmente dos centroides aleatoriamente, y esto puede llevar a obtener diferentes clasificaciones en varias ejecuciones con la misma configuración.\\
+
+\noindent En nuestro caso conocemos el valor de K, puesto que disponemos de dos grupos de objetos. Además, se ha elegido este algoritmo por su simpleza y porque, en contraste con otros algoritmos de clustering, es el más rápido para estas tareas.

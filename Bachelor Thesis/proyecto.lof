@@ -1,0 +1,28 @@
+\select@language {spanish}
+\contentsline {figure}{\numberline {1}{\ignorespaces Brazo rob\IeC {\'o}tico aislado}}{13}{figure.1}
+\contentsline {figure}{\numberline {2}{\ignorespaces Gr\IeC {\'a}fica que muestra el crecimiento del mercado de robots industriales\cite {robgraph}. El eje horizontal representa el a\IeC {\~n}o y el eje vertical miles de millones de d\IeC {\'o}lares}}{14}{figure.2}
+\contentsline {figure}{\numberline {3}{\ignorespaces A\IeC {\~n}o 1738. Aut\IeC {\'o}mata con forma de pato de Jacques de Vaucanson.}}{17}{figure.3}
+\contentsline {figure}{\numberline {4}{\ignorespaces A\IeC {\~n}o 1956. Robot industrial Unimate.}}{17}{figure.4}
+\contentsline {figure}{\numberline {5}{\ignorespaces Baxter trabajando cerca de una persona.}}{18}{figure.5}
+\contentsline {figure}{\numberline {6}{\ignorespaces Robot Baxter.}}{21}{figure.6}
+\contentsline {figure}{\numberline {7}{\ignorespaces Articulaciones de Baxter.}}{23}{figure.7}
+\contentsline {figure}{\numberline {8}{\ignorespaces Diagrama de Gantt.}}{26}{figure.8}
+\contentsline {figure}{\numberline {9}{\ignorespaces Posici\IeC {\'o}n inicial de Baxter.}}{31}{figure.9}
+\contentsline {figure}{\numberline {10}{\ignorespaces Diagrama de casos de uso.}}{33}{figure.10}
+\contentsline {figure}{\numberline {11}{\ignorespaces Diagrama de flujo.}}{41}{figure.11}
+\contentsline {figure}{\numberline {12}{\ignorespaces Esquema general del escenario.}}{45}{figure.12}
+\contentsline {figure}{\numberline {13}{\ignorespaces Captura que muestra el reconocimiento de los objetos y la definici\IeC {\'o}n de sus per\IeC {\'\i }metros.}}{47}{figure.13}
+\contentsline {figure}{\numberline {14}{\ignorespaces Imagen que muestra la configuraci\IeC {\'o}n de objetos de la imagen anterior \ref {fig:capt} desde fuera.}}{47}{figure.14}
+\contentsline {figure}{\numberline {15}{\ignorespaces Capturas de la ejecuci\IeC {\'o}n de \textit {pick and place} adaptado.}}{49}{figure.15}
+\contentsline {figure}{\numberline {16}{\ignorespaces Paleta de cart\IeC {\'o}n.}}{50}{figure.16}
+\contentsline {figure}{\numberline {17}{\ignorespaces Capturas de la clasificaci\IeC {\'o}n en entorno est\IeC {\'a}tico.}}{50}{figure.17}
+\contentsline {figure}{\numberline {18}{\ignorespaces Capturas de la ejecuci\IeC {\'o}n de la segmentaci\IeC {\'o}n con paleta en entorno din\IeC {\'a}mico.}}{51}{figure.18}
+\contentsline {figure}{\numberline {19}{\ignorespaces Cu\IeC {\~n}a de cart\IeC {\'o}n.}}{52}{figure.19}
+\contentsline {figure}{\numberline {20}{\ignorespaces Capturas de la ejecuci\IeC {\'o}n de la segmentaci\IeC {\'o}n con cu\IeC {\~n}a en entorno din\IeC {\'a}mico.}}{53}{figure.20}
+\contentsline {figure}{\numberline {21}{\ignorespaces Gr\IeC {\'a}fica que muestra la velocidad frente a la eficiencia en clasificaci\IeC {\'o}n din\IeC {\'a}mica con cu\IeC {\~n}a donde la l\IeC {\'\i }nea sigue un ajuste polin\IeC {\'o}mico de grado 6.}}{55}{figure.21}
+\contentsline {figure}{\numberline {22}{\ignorespaces Ejemplo de precisi\IeC {\'o}n y exhaustividad en el que se ven los objetos que toma como verdaderos positivos (a la izquierda) y los que toma como negativos (a la derecha).}}{56}{figure.22}
+\contentsline {figure}{\numberline {23}{\ignorespaces Gr\IeC {\'a}fica que muestra la exhaustividad frente a la precisi\IeC {\'o}n en clasificaci\IeC {\'o}n est\IeC {\'a}tica}}{57}{figure.23}
+\contentsline {figure}{\numberline {24}{\ignorespaces Gr\IeC {\'a}fica que muestra el n\IeC {\'u}mero de objetos grandes frente a la precisi\IeC {\'o}n en clasificaci\IeC {\'o}n est\IeC {\'a}tica, representando la media con una columna y la desviaci\IeC {\'o}n t\IeC {\'\i }pica con una barra.}}{60}{figure.24}
+\contentsline {figure}{\numberline {25}{\ignorespaces Gr\IeC {\'a}fica que muestra el n\IeC {\'u}mero de objetos peque\IeC {\~n}os frente a la precisi\IeC {\'o}n en clasificaci\IeC {\'o}n est\IeC {\'a}tica, representando la media con una columna y la desviaci\IeC {\'o}n t\IeC {\'\i }pica con una barra.}}{61}{figure.25}
+\contentsline {figure}{\numberline {26}{\ignorespaces Gr\IeC {\'a}fica que muestra el n\IeC {\'u}mero de objetos grandes frente a la precisi\IeC {\'o}n en clasificaci\IeC {\'o}n din\IeC {\'a}mica con cu\IeC {\~n}a, representando la media con una columna y la desviaci\IeC {\'o}n t\IeC {\'\i }pica con una barra.}}{62}{figure.26}
+\contentsline {figure}{\numberline {27}{\ignorespaces Gr\IeC {\'a}fica que muestra el n\IeC {\'u}mero de objetos peque\IeC {\~n}os frente a la precisi\IeC {\'o}n en clasificaci\IeC {\'o}n din\IeC {\'a}mica con cu\IeC {\~n}a, representando la media con una columna y la desviaci\IeC {\'o}n t\IeC {\'\i }pica con una barra.}}{63}{figure.27}

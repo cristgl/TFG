@@ -1,0 +1,64 @@
+\select@language {spanish}
+\contentsline {section}{\numberline {1}Introducci\IeC {\'o}n}{13}{section.1}
+\contentsline {subsection}{\numberline {1.1}Motivaci\IeC {\'o}n}{14}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Situaci\IeC {\'o}n inicial}{15}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Objetivos}{15}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}Procedimiento}{15}{subsection.1.4}
+\contentsline {subsection}{\numberline {1.5}Historia de la rob\IeC {\'o}tica}{16}{subsection.1.5}
+\contentsline {subsubsection}{\numberline {1.5.1}Actualidad}{18}{subsubsection.1.5.1}
+\contentsline {section}{\numberline {2}Entorno operacional}{20}{section.2}
+\contentsline {subsection}{\numberline {2.1}ROS}{20}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Conceptos}{20}{subsubsection.2.1.1}
+\contentsline {subsection}{\numberline {2.2}Baxter}{21}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Introducci\IeC {\'o}n}{21}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}Componentes hardware}{22}{subsubsection.2.2.2}
+\contentsline {subsection}{\numberline {2.3}MoveIt! y RViz}{23}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Modelos de robot}{24}{subsection.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}Formato universal de descripci\IeC {\'o}n rob\IeC {\'o}tica}{24}{subsubsection.2.4.1}
+\contentsline {subsubsection}{\numberline {2.4.2}Formato sem\IeC {\'a}ntico de descripci\IeC {\'o}n rob\IeC {\'o}tica}{24}{subsubsection.2.4.2}
+\contentsline {section}{\numberline {3}Gesti\IeC {\'o}n del proyecto}{25}{section.3}
+\contentsline {subsection}{\numberline {3.1}Metodolog\IeC {\'\i }a del software}{25}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Planificaci\IeC {\'o}n}{25}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Presupuesto}{27}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Recursos hardware y software}{27}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.2}Recursos humanos}{28}{subsubsection.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.3}Coste total}{28}{subsubsection.3.3.3}
+\contentsline {subsection}{\numberline {3.4}Gesti\IeC {\'o}n de problemas}{28}{subsection.3.4}
+\contentsline {section}{\numberline {4}An\IeC {\'a}lisis y dise\IeC {\~n}o del sistema}{31}{section.4}
+\contentsline {subsection}{\numberline {4.1}Restricciones del sistema}{32}{subsection.4.1}
+\contentsline {subsubsection}{\numberline {4.1.1}Restricciones hardware}{32}{subsubsection.4.1.1}
+\contentsline {subsubsection}{\numberline {4.1.2}Restricciones software}{32}{subsubsection.4.1.2}
+\contentsline {subsection}{\numberline {4.2}Especificaci\IeC {\'o}n de casos de uso}{33}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}Entorno est\IeC {\'a}tico}{34}{subsubsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2}Entorno din\IeC {\'a}mico}{36}{subsubsection.4.2.2}
+\contentsline {subsection}{\numberline {4.3}Especificaci\IeC {\'o}n de requisitos}{37}{subsection.4.3}
+\contentsline {subsubsection}{\numberline {4.3.1}Requisitos funcionales}{38}{subsubsection.4.3.1}
+\contentsline {subsubsection}{\numberline {4.3.2}Requisitos no funcionales}{39}{subsubsection.4.3.2}
+\contentsline {section}{\numberline {5}Dise\IeC {\~n}o}{41}{section.5}
+\contentsline {subsection}{\numberline {5.1}M\IeC {\'o}dulo de reconocimiento}{42}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}M\IeC {\'o}dulo de control de Baxter}{42}{subsection.5.2}
+\contentsline {section}{\numberline {6}Implementaci\IeC {\'o}n}{44}{section.6}
+\contentsline {subsection}{\numberline {6.1}Esquema general del escenario}{45}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Visi\IeC {\'o}n por computador}{46}{subsection.6.2}
+\contentsline {subsubsection}{\numberline {6.2.1}Reconocimiento de objetos}{46}{subsubsection.6.2.1}
+\contentsline {subsubsection}{\numberline {6.2.2}Procesamiento de im\IeC {\'a}genes}{48}{subsubsection.6.2.2}
+\contentsline {subsection}{\numberline {6.3}Procedimientos de control}{49}{subsection.6.3}
+\contentsline {subsubsection}{\numberline {6.3.1}\textit {Pick and place} adaptado}{49}{subsubsection.6.3.1}
+\contentsline {subsubsection}{\numberline {6.3.2}Clasificaci\IeC {\'o}n en entorno est\IeC {\'a}tico}{50}{subsubsection.6.3.2}
+\contentsline {subsubsection}{\numberline {6.3.3}Clasificaci\IeC {\'o}n en entorno din\IeC {\'a}mico con cinta transportadora}{51}{subsubsection.6.3.3}
+\contentsline {section}{\numberline {7}Pruebas}{54}{section.7}
+\contentsline {subsection}{\numberline {7.1}Introducci\IeC {\'o}n}{54}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Medidas de rendimiento}{54}{subsection.7.2}
+\contentsline {subsubsection}{\numberline {7.2.1}Precisi\IeC {\'o}n frente a velocidad en clasificaci\IeC {\'o}n din\IeC {\'a}mica}{54}{subsubsection.7.2.1}
+\contentsline {subsubsection}{\numberline {7.2.2}Precisi\IeC {\'o}n y exhaustividad}{55}{subsubsection.7.2.2}
+\contentsline {subsubsection}{\numberline {7.2.3}Rob\IeC {\'o}tica adaptativa}{58}{subsubsection.7.2.3}
+\contentsline {subsection}{\numberline {7.3}Medidas de error}{59}{subsection.7.3}
+\contentsline {subsubsection}{\numberline {7.3.1}Clasificaci\IeC {\'o}n est\IeC {\'a}tica}{59}{subsubsection.7.3.1}
+\contentsline {subsubsection}{\numberline {7.3.2}Clasificaci\IeC {\'o}n din\IeC {\'a}mica}{61}{subsubsection.7.3.2}
+\contentsline {section}{\numberline {8}Conclusi\IeC {\'o}n}{64}{section.8}
+\contentsline {subsection}{\numberline {8.1}Competencias adquiridas}{64}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Trabajos futuros}{65}{subsection.8.2}
+\contentsline {section}{\numberline {9}Anexo. Algoritmos de clustering}{66}{section.9}
+\contentsline {subsection}{\numberline {9.1}Algoritmo K-means}{66}{subsection.9.1}
+\contentsline {subsubsection}{\numberline {9.1.1}C\IeC {\'o}mo funciona}{66}{subsubsection.9.1.1}
+\contentsline {subsubsection}{\numberline {9.1.2}Por qu\IeC {\'e} elegir K-means}{66}{subsubsection.9.1.2}

@@ -1,0 +1,29 @@
+\section{Conclusión}
+\noindent Para concluir, se va a realizar una comparativa entre los objetivos fijados al principio del proyecto y los resultados logrados a lo largo de este. Finalmente, se describirán las capacidades adquiridas y algunos proyectos futuros que se proponen a partir del desarrollo de este. \\
+
+\noindent La sección de Introducción (\ref{intro}) dio una visión general sobre los objetivos de este trabajo, en él se han utilizado herramientas como MoveIt!, los tópicos y servicios de ROS, y las librerías de OpenCV para implementar la visión por computador. \\
+El objetivo principal de este proyecto (sección \ref{objetivos}) consistía en hacer que el robot Baxter clasificase objetos por color y posición en un entorno dinámico. Para lograrlo, se ha pasado por distintas fases ya nombradas anteriormente, como la adaptación de un programa de \textit{pick and place} del simulador Gazebo para la familiarización con el entorno, la clasificación de objetos en entorno estático y distintas posibilidades de realizar la segmentación en entorno dinámico. Así, con estos objetivos fijados se ha utilizado un desarrollo en espiral (sección \ref{software}) como metodología seguida para la planificación de tareas, lo que ha permitido mejorar continuamente el trabajo realizado. \\
+
+\noindent Todos estos programas se han puesto a prueba, como veíamos en la sección \ref{sec:pruebas}, en la que se ha estudiado la precisión, velocidad y capacidad de procesamiento en estas funciones, por parte de Baxter y de las distintas herramientas nombradas. Además, se ha implementado un módulo de robótica adaptativa, que permite a Baxter realizar la mejor aproximación a partir de la precisión adquirida en la ejecución anterior. \\
+
+\noindent En cuanto a los aspectos éticos, aunque en muchas ocasiones se piense que la automatización de tareas acaba con muchos puestos de trabajo, con las ventajas ya vistas en la sección \ref{actualidad}, resulta de gran interés el intentar que esas características idílicas generen beneficios a nuestro favor. \\
+
+\noindent En general, los resultados obtenidos en este proyecto pueden resultar útiles para proyectos futuros; por ello, la implementación y el contenido de este trabajo será abierto y estará disponible en \textit{GitHub} \cite{crgh} y en la página web del laboratorio \cite{cvrlab}.
+
+\subsection{Competencias adquiridas}
+\noindent A lo largo de este proyecto, se han adquirido las siguientes capacidades:
+
+\begin{itemize}
+	\item \textbf{Familiarización con el entorno ROS.} ROS es un sistema operativo distribuido, en el que se ejecutan varios nodos en paralelo, controlados por tópicos, servicios y mensajes. En este proyecto se ha realizado un estudio de todos sus módulos a través de la documentación que proporciona para conseguir controlar el robot.
+	\item \textbf{Librería OpenCV.} Esta es la librería utilizada en el módulo de visión por computador. Para la realización de este proyecto ha sido necesario el estudio de variables y funciones que esta librería proporciona.
+	\item \textbf{MoveIt!.} Esta plataforma ha permitido realizar los movimientos correspondientes para separar los objetos. Gracias a su uso se han conseguido movimientos más rectos y simples que los que se conseguían con ROS. \\
+\end{itemize}
+
+\subsection{Trabajos futuros}
+\noindent El resultado de las pruebas de este trabajo no se ha obtenido en su totalidad mediante código; al concluir una ejecución, sería una mejora significativa que Baxter pudiese autoevaluarse a sí mismo, conociendo los objetos que ha separado bien, los que no ha movido y los que ha clasificado mal. \\
+
+\noindent Otra posible extensión de este trabajo consistiría en realizar un \textit{pick and place} en entorno dinámico. \\
+
+\noindent Otra aproximación podría apoyarse en utilizar piezas de otros tamaños, formas y colores, quizás, realizando una clasificación en un entorno real con aceitunas o tomates, entre otras frutas y verduras. \\
+
+\noindent La velocidad de la cinta transportadora podría regularse automáticamente, teniendo en cuenta la velocidad de ejecución de las trayectorias, de forma que se maximice la precisión de la clasificación de las piezas. \\

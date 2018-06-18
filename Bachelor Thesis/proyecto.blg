@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: proyecto.aux
+The style file: ieeetr.bst
+Database file #1: bibliografia/bibliografia.bib
+Warning--empty journal in powers2011evaluation
+Warning--empty journal in pr
+You've used 36 entries,
+            1876 wiz_defined-function locations,
+            617 strings with 7438 characters,
+and the built_in function-call counts, 6203 in all, are:
+= -- 567
+> -- 210
+< -- 0
++ -- 92
+- -- 56
+* -- 326
+:= -- 844
+add.period$ -- 36
+call.type$ -- 36
+change.case$ -- 36
+chr.to.int$ -- 0
+cite$ -- 38
+duplicate$ -- 268
+empty$ -- 761
+format.name$ -- 56
+if$ -- 1557
+int.to.chr$ -- 0
+int.to.str$ -- 36
+missing$ -- 10
+newline$ -- 111
+num.names$ -- 31
+pop$ -- 224
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 218
+stack$ -- 0
+substring$ -- 248
+swap$ -- 70
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 2
+while$ -- 55
+width$ -- 38
+write$ -- 276
+(There were 2 warnings)
