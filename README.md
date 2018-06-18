@@ -76,3 +76,4 @@ $ cd ros_ws/
 $ ./baxter.sh
 $ catkin_make
 $ roslaunch package file.launch
+
