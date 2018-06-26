@@ -1,5 +1,5 @@
 # Object classification tasks using the Baxter robot
- This project shows the development of various classification tasks in static and dynamic environments with the Baxter robot. This robot will separate two groups of objects with different colours, positions and sizes, using the Robot Operating System (ROS Kinetic) on Ubuntu 16.04 LTS, MoveIt! and the OpenCV library for the computer vision, based on the colour filter made by Maik Heufekes (https://github.com/cvr-lab/baxter_pick_and_place).
+ This project shows the development of various classification tasks in static and dynamic environments with the Baxter robot. This robot will separate two groups of objects with different colours, positions and sizes, using the Robot Operating System (ROS Kinetic) on Ubuntu 16.04 LTS, MoveIt! and the OpenCV library for the computer vision, based on the colour filter made by Maik Heufekes (https://github.com/cvr-lab/baxter_pick_and_place). Some videos are available at http://www.ugr.es/~cvrlab/projects/baxter_conveyor/baxter.html.
  
 # Prerequisites
 
