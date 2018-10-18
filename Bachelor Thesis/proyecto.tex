@@ -1,5 +1,4 @@
 \documentclass[a4paper,11pt]{article}
-%\documentclass[a4paper,twoside,11pt,titlepage]{book}
 \usepackage{listings}
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
@@ -10,10 +9,6 @@
 \usepackage{rotating}
 \usepackage{fancyhdr}
 
-% \usepackage[style=list, number=none]{glossary} %
-%\usepackage{titlesec}
-%\usepackage{pailatino}
-
 \decimalpoint
 \usepackage{dcolumn}
 \newcolumntype{.}{D{.}{\esperiod}{-1}}
@@ -21,10 +16,7 @@
 \addto\shorthandsspanish{\let\esperiod\es@period@code}
 \makeatother
 
-
-%\usepackage[chapter]{algorithm}
 \RequirePackage{verbatim}
-%\RequirePackage[Glenn]{fncychap}
 
 \usepackage{graphicx}
 \usepackage{afterpage}
@@ -69,40 +61,20 @@ pdfcreator = {LaTeX con el paquete ....},
 pdfproducer = {pdflatex}
 }
 
-%\hyphenation{}
-
-
-%\usepackage{doxygen/doxygen}
-%\usepackage{pdfpages}
 \usepackage{url}
 \usepackage{colortbl,longtable}
 \usepackage[stable]{footmisc}
-%\usepackage{index}
-
-%\makeindex
-%\usepackage[style=long, cols=2,border=plain,toc=true,number=none]{glossary}
-% \makeglossary
-
-% Definición de comandos que me son tiles:
-%\renewcommand{\indexname}{Índice alfabético}
-%\renewcommand{\glossaryname}{Glosario}
 
 \pagestyle{fancy}
 \fancyhf{}
 
 
 
-%\renewcommand{\chaptermark}[1]{\markboth{\textbf{#1}}{}}
 \renewcommand{\sectionmark}[1]{\markright{\textbf{\thesection. #1}}}
 
 \setlength{\headheight}{1.5\headheight}
 
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
-%Definimos los tipos teorema, ejemplo y definición podremos usar estos tipos
-%simplemente poniendo \begin{teorema} \end{teorema} ...
-%\newtheorem{teorema}{Teorema}[chapter]
-%\newtheorem{ejemplo}{Ejemplo}[chapter]
-%\newtheorem{definicion}{Definición}[chapter]
 
 \definecolor{gray97}{gray}{.97}
 \definecolor{gray75}{gray}{.75}
@@ -222,24 +194,12 @@ pdfproducer = {pdflatex}
 %
 \newpage
 \input{capitulos/09_Anexo}
-%
-%%\chapter{Conclusiones y Trabajos Futuros}
-%
-%
-%%\nocite{*}
-%\bibliography{bibliografia/bibliografia.bib}\addcontentsline{toc}{chapter}{Bibliografía}
-%\bibliographystyle{miunsrturl}
+
 \newpage
 
 \bibliography{bibliografia/bibliografia} 
 \bibliographystyle{ieeetr}
-%
-%\appendix
-%\input{apendices/manual_usuario/manual_usuario}
-%%\input{apendices/paper/paper}
-%\input{glosario/entradas_glosario}
-% \addcontentsline{toc}{chapter}{Glosario}
-% \printglossary
+
 
 \chapter*{}
 \thispagestyle{empty}
